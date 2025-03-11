@@ -1,4 +1,6 @@
+
 import mongoose from 'mongoose';
+
 export async function connectTB() {
     try {
         await mongoose.connect('mongodb+srv://Grupo-06:grupo06@cursadanodejs.ls9ii.mongodb.net/Node-js');

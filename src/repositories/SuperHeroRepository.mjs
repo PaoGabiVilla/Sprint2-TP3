@@ -11,9 +11,13 @@ class SuperHeroRepository extends IRepository {
     }
 
     async buscarPorAtributo(atributo, valor) {
-        RESOLVER
+        const filtro = {};
+        filtro[atributo] = valor;
+        return await SuperHero.find(filtro);
     }
     async obtenerMayoresDe30(){
-        RESOLVER
+        return await SuperHero.find({ edad: {$gt: 30}});
     }
 }
+
+export default SuperHeroRepository;
