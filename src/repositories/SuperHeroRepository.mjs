@@ -1,5 +1,3 @@
-javascript
-import superHero from '../models/SuperHero.mjs';
 import SuperHero from '../models/SuperHero.mjs';
 import IRepository from './IRepository.mjs';
 
