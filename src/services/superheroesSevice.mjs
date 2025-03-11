@@ -1,18 +1,17 @@
-import superHero from '../models/SuperHero.mjs';
-import SuperHeroRepository from '../repositories/SuperHeroRepository.mjs';
+import superHeroRepository from '../repositories/SuperHeroRepository.mjs';
 
-export async function ontenerSuperheroePorId(Id) {
-    return await SuperHeroRepository.obtenerPorId(id);    
+export async function obtenerSuperheroePorId(id) {
+    return await superHeroRepository.obtenerPorId(id);    
 }
 
 export async function obtenerTodosLosSuperheroes() {
-    return await SuperHeroRepository.obtenerTodos();    
+    return await superHeroRepository.obtenerTodos();    
 }
 
 export async function buscarSuperheroesPorAtributo(atributo, valor) {
-    return await SuperHeroRepository.buscarPorAtributo(atributo, valor);
+    return await superHeroRepository.buscarPorAtributo(atributo, valor);
 }
 export async function obtenerSuperheroesMayoresDe30() {
-    return await SuperHeroRepository.obtenerMayoresDe30()
+    return await superHeroRepository.obtenerMayoresDe30()
     
 }
