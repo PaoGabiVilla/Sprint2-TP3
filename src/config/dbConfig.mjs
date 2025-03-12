@@ -1,7 +1,7 @@
 
 import mongoose from 'mongoose';
 
-export async function connectTB() {
+export async function connectDB() {
     try {
         await mongoose.connect('mongodb+srv://Grupo-06:grupo06@cursadanodejs.ls9ii.mongodb.net/Node-js');
         console.log('Conexión exitosa a MongoDB');

@@ -17,7 +17,7 @@ class SuperHeroRepository extends IRepository {
         const filtrar = {};
         //$regex: valor: "permite buscar valores que contengan la palabra, sin importar en qué parte del texto aparezca."
         //$options: 'i': Hace la búsqueda insensible a mayúsculas y minúsculas.
-        filtrar[atributo] = {$regex: valor,$option:'i'};//Búsqueda insencible a mayúsculas
+        filtrar[atributo] = {$regex: valor,$options:'i'};//Búsqueda insencible a mayúsculas
         return await superHero.find(filtrar);*/
 
     }
