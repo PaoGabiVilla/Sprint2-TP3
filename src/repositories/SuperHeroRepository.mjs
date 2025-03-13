@@ -20,13 +20,13 @@ class SuperHeroRepository extends IRepository {
         
         filtrar[atributo] = {$regex: valor,$options:'i'};
                 //Búsqueda insencible a mayúsculas
-        return await superHero.find(filtrar);
+        return await SuperHero.find(filtrar);
 
     }
 
     async obtenerMayoresDe30() {
         // RESOLVER
-        return await superHero.find({ edad: { $gt: 30 } });
+        return await SuperHero.find({ edad: { $gt: 30 } });
     }
 }
 
