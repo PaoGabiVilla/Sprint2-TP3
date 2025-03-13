@@ -13,20 +13,21 @@ class SuperHeroRepository extends IRepository {
     async buscarPorAtributo(atributo, valor) {
         // RESOLVER
         
-      //Se declara una variable llamada filtrar que es un objeto vacío {}.Este objeto servirá como filtro para la consulta en MongoDB.
+                //Se declara una variable llamada filtrar que es un objeto vacío {}.
+                //Este objeto servirá como filtro para la consulta en MongoDB.
+        
         const filtrar = {};
         
-        filtrar[atributo] = {$regex: valor,$options:'i'};//Búsqueda insencible a mayúsculas
+        filtrar[atributo] = {$regex: valor,$options:'i'};
+                //Búsqueda insencible a mayúsculas
         return await superHero.find(filtrar);
 
     }
 
     async obtenerMayoresDe30() {
         // RESOLVER
-       /* { edad: { $gt: 30 }
-        { $gt: 30 }:$gt //(greater than) es un operador de MongoDB que significa "mayor que".
-        return await superHero.find({edad: {$gt:30}});
-        }
-    }*/
+        return await superHero.find({ edad: { $gt: 30 } });
+    }
+}
 
 export default new SuperHeroRepository();
