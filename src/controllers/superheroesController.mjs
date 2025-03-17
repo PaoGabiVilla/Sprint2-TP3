@@ -1,4 +1,4 @@
-import { obtenerSuperheroePorId, obtenerTodosLosSuperheroes, buscarSuperheroesPorAtributo, obtenerSuperheroesMayoresDe30 } from "../services/superheroesService.mjs";
+import { obtenerSuperheroePorId, obtenerTodosLosSuperheroes, buscarSuperheroesPorAtributo, obtenerSuperheroesMayoresDe30, obtenerSuperheroesMenoresDe30 } from "../services/superheroesService.mjs";
 import { renderizarSuperheroe, renderizarListaSuperheroes} from '../views/responseView.mjs';
 
 export async function obtenerSuperheroePorIdController(req, res) {
@@ -58,4 +58,17 @@ export async function obtenerSuperheroesMayoresDe30Controller(req, res) {
         } catch (error) {
             res.status(500).send({ mensaje: 'Error al obtener superhéroes mayores de 30', error: error.message });
         }
+}
+export async function obtenerSuperheroesMenoresDe30Controller(req, res) {
+    try{
+        const superheroes = await obtenerSuperheroesMenoresDe30();
+        if (superheroes.length === 0) {
+            return res.status(404).send({ mensaje:'No se encontró superheroes menores de 30'});
+        }
+    const superheroesFormateados = renderizarListaSuperheroes(superheroes);
+    res.status(200).json(superheroesFormateados);
+    }catch(error){
+        res.status(500).send({ mensaje: 'Error al obtener superhéroes menores de 30', error: error.menssage });
+
+    }
 }

@@ -28,6 +28,9 @@ class SuperHeroRepository extends IRepository {
         // RESOLVER
         return await SuperHero.find({ edad: { $gt: 30 } });
     }
+    async obtenerMenoresDe30(){
+        return await SuperHero.find({ edad: {$lt:30 }});
+    }
 }
 
 export default new SuperHeroRepository();
